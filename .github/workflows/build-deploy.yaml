@@ -11,7 +11,7 @@ on:
 jobs:
   calc-version:
     name: Run GitVersion
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     outputs:
       semVer: ${{ steps.gitversion.outputs.fullSemVer }}
       shortSha: ${{ steps.gitversion.outputs.shortSha }}
@@ -36,7 +36,7 @@ jobs:
   build-web:
     name: Build web UI
     needs: [calc-version]
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
