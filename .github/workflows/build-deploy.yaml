@@ -64,12 +64,12 @@ jobs:
   build-app:
     strategy:
       matrix:
-        platform: [linux-amd64, linux-arm64]
+        platform: [macos, windows]
         include:
-          - platform: linux-amd64
-            runner: buildjet-4vcpu-ubuntu-2204
+          - platform: macos-latest
+            runner: 
 
-          - platform: linux-arm64
+          - platform: windows-latest
             runner: buildjet-8vcpu-ubuntu-2204-arm
 
     name: Build Porla (${{ matrix.platform }})
